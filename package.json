@@ -1,0 +1,20 @@
+{
+	"name": "irene-11ty",
+	"version": "1.0.0",
+	"description": "Eleventy project for internationalization",
+	"main": "index.js",
+	"scripts": {
+		"start": "eleventy --serve",
+		"build": "eleventy"
+	},
+	"keywords": [
+		"eleventy",
+		"internationalization",
+		"i18n"
+	],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "2.0"
+	}
+}
