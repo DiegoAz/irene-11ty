@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
 		errorMode: "allow-fallback",
 	});
 	eleventyConfig.addPassthroughCopy("src/_redirects");
+	eleventyConfig.addPassthroughCopy("src/_worker.js");
 	return {
 		dir: {
 			input: "src",

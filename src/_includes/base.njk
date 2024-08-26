@@ -30,21 +30,6 @@
       hreflang="x-default"
       href="{{ meta.url }}{{ page.url | locale_url('en') }}"
     />
-    <script>
-      (function() {
-        var userLang = navigator.language || navigator.userLanguage;
-        var currentPath = window.location.pathname;
-        if (currentPath === '/') {
-          if (userLang.startsWith('de')) {
-            window.location.replace('/de/');
-          } else if (userLang.startsWith('es')) {
-            window.location.replace('/es/');
-          } else {
-            window.location.replace('/en/');
-          }
-        }
-      })();
-    </script>
   </head>
 
   <body>
