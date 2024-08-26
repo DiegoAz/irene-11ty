@@ -5,6 +5,7 @@ module.exports = function (eleventyConfig) {
 		defaultLanguage: "en",
 		errorMode: "allow-fallback",
 	});
+	eleventyConfig.addPassthroughCopy("src/_redirects");
 	return {
 		dir: {
 			input: "src",
