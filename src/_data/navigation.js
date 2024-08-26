@@ -1,23 +1,13 @@
 // just my personal preference for creating navigation in Eleventy
 module.exports = {
-	en: [
+	pt: [
 		{
-			text: "Home",
-			url: "/en/",
+			text: "Início",
+			url: "/pt/",
 		},
 		{
-			text: "About me",
-			url: "/en/about-me/",
-		},
-	],
-	de: [
-		{
-			text: "Startseite",
-			url: "/de/",
-		},
-		{
-			text: "Über mich",
-			url: "/de/ueber-mich/",
+			text: "Sobre mim",
+			url: "/pt/sobre-mim/",
 		},
 	],
 	es: [

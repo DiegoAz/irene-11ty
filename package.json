@@ -4,7 +4,7 @@
 	"description": "Eleventy project for internationalization",
 	"main": "index.js",
 	"scripts": {
-		"start": "eleventy --serve",
+		"start": "NODE_NO_WARNINGS=1 eleventy --serve",
 		"build": "eleventy"
 	},
 	"keywords": [

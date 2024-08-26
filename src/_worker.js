@@ -4,17 +4,9 @@ export default {
 
 		// Only intercept requests to the root
 		if (url.pathname === "/") {
-			const accept_language =
-				request.headers.get("Accept-Language") || "";
-			let lang = "en"; // Default to English
-
-			if (accept_language.startsWith("de")) {
-				lang = "de";
-			} else if (accept_language.startsWith("es")) {
-				lang = "es";
-			}
-
-			// Redirect to the appropriate language version
+			const lang = getPreferredLanguage(
+				request.headers.get("Accept-Language"),
+			);
 			return Response.redirect(`${url.origin}/${lang}/`, 302);
 		}
 
@@ -22,3 +14,20 @@ export default {
 		return env.ASSETS.fetch(request);
 	},
 };
+
+function getPreferredLanguage(acceptLanguage = "") {
+	const supportedLanguages = ["pt", "es"];
+	const preferredLanguages = acceptLanguage
+		.split(",")
+		.map((lang) =>
+			lang.trim().split(";")[0].toLowerCase().slice(0, 2),
+		);
+
+	for (const lang of preferredLanguages) {
+		if (supportedLanguages.includes(lang)) {
+			return lang;
+		}
+	}
+
+	return "es"; // Default to Spanish
+}
